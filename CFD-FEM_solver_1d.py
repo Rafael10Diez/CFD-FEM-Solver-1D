@@ -16,16 +16,17 @@
 #     - http://homepage.tudelft.nl/d2b4e/burgers/exercises.pdf
 
 import numpy as np
+import sympy as sp
+
+from sympy import init_printing
+init_printing()
 
 class Derive_S_elem:
     def __init__(self):
         
         # Derive FEM Formulation for the stiffness matrix and the force vector.
         
-        from sympy import init_printing
-        init_printing()
         #
-        import sympy as sp
         symbols  =  sp.symbols
         sin      =  sp.sin
         
@@ -186,8 +187,6 @@ class ExactSolution:
     # Assignment 13: Derive Analytical Solution
     def derivation(self):
         
-        import sympy as sp
-        
         symbols             =  sp.symbols
         integrate           =  sp.integrate
         Derivative          =  sp.Derivative
@@ -209,8 +208,6 @@ class ExactSolution:
         # Eq(U(x), C1*exp(-x*sqrt(beta/D)) + C2*exp(x*sqrt(beta/D)) + a*sin(20*x)/(400*D + beta) + b/beta)
         
     def find_constants(self):
-        
-        import sympy as sp
         
         symbols             =  sp.symbols
         sqrt                =  sp.sqrt
