@@ -26,7 +26,6 @@ class Derive_S_elem:
         
         # Derive FEM Formulation for the stiffness matrix and the force vector.
         
-        #
         symbols  =  sp.symbols
         sin      =  sp.sin
         
