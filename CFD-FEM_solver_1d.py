@@ -40,7 +40,7 @@ class Derive_S_elem:
         #     where the constants (a,b) can be adjusted to match the specified running cases [f=1, f=sin(20x)]
         
         D,beta,u1,u2,chi,x,x_0,x_1,dh,a,b,Jac =  map(symbols,'D,beta,u1,u2,chi,x,x_0,x_1,dh,a,b,Jac'.split(','))
-        #
+        
         diff_x       = lambda var: var.diff(chi)*Jac # dvar_dchi * dchi_dx
         
         chi_x        = (x-x_0)/dh
@@ -57,13 +57,13 @@ class Derive_S_elem:
         S,B = [],[]
         
         for Ni,grad_Ni in zip(N, grad_N):
-            #
+            
             int_vol  = D*grad_u*grad_Ni + beta*u*Ni
             int_f    = (f*Ni).replace(chi, chi_x )
-            #
+            
             Ai    = sp.integrate(int_vol*dh,(chi,0  ,1  ))
             bi    = sp.integrate(int_f     ,(x  ,x_0,x_1))
-            #
+            
             si0   = Ai.subs(u1,1).subs(u2,0)
             si1   = Ai.subs(u1,0).subs(u2,1)
             S.append( [ si0, si1 ] )
@@ -120,7 +120,7 @@ class FemDiffusionReaction1D:
         b        =  self.b   
         dh       =  self.dh
         Jac      =  1./dh
-        #
+        
         sin,cos = np.sin, np.cos
         
         # Note: copy-pasted expression from the output above
