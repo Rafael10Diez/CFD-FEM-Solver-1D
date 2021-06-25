@@ -7,7 +7,7 @@
 #                   Prof.dr.ir. F.J. Vermolen
 #                   Prof.dr.ir. C. Vuik
 #
-# Student name : Rafael Diez
+# Name         : Rafael Diez
 # Date         : 20/01/2021
 # Topic        : Exercise 17: One dimensional finite element code (CFD)
 #
